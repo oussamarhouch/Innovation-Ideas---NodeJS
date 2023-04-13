@@ -1,16 +1,36 @@
-<%- include('partials/header') %>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/home.css"/>
+  <script type="text/javascript" src="{{ URL::asset('js/index.js') }}"></script>
+  <title>Boite à idée innovante</title>
+</head>
 
-<div class="jumbotron centered">
-  <div class="container">
-    <i class="fas fa-key fa-6x"></i>
-    <h1 class="display-3">Secrets</h1>
-    <p class="lead">Don't keep your secrets, share them anonymously!</p>
-    <hr>
-    <a class="btn btn-light btn-lg" href="/register" role="button">Register</a>
-    <a class="btn btn-dark btn-lg" href="/login" role="button">Login</a>
-
-  </div>
-</div>
-
-<%- include('partials/footer') %>
+<body>
+  <%- include('partials/header') %>
+  <section id="hero">
+    <div class="hero container">
+      <% if(statut === 1 || statut === 2){ %>
+        <div>
+          <h1>La vision <span></span></h1>
+          <h1>qui nourrit <span></span></h1>
+          <h1>la créativité <span></span></h1>
+        </div>
+      <% } else{ %>
+        <div>
+          <h1>La vision <span></span></h1>
+          <h1>qui nourrit <span></span></h1>
+          <h1>la créativité <span></span></h1>
+          <a href="login" type="button" class="cta">
+            Commencer
+          </a>
+        </div>
+      <% } %>
+    </div>
+  </section>
+  <%- include('partials/footer') %>
+</body>
+</html>
